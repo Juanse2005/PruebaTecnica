@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+
 export class Servidor {
     private readonly app: express.Application;
 
@@ -27,4 +28,6 @@ export class Servidor {
             console.log("El servidor está en el puerto", this.port);
         });
     }
+
+
 }
