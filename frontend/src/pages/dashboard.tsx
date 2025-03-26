@@ -25,11 +25,10 @@ const Dashboard = () => {
   const handleDelete = async (id: number) => {
     if (window.confirm("¿Estás seguro de que deseas eliminar este producto?")) {
       try {
-        await deleteProductos(id); // Llama al servicio para eliminar el producto
-        setProductos(productos.filter((producto) => producto.id_producto !== id)); // Actualiza la lista de productos
+        await deleteProductos(id);
+        setProductos(productos.filter((producto) => producto.id_producto !== id));
       } catch (error) {
         console.error("Error al eliminar el producto:", error);
-        setError("Hubo un error al eliminar el producto. Inténtalo de nuevo.");
       }
     }
   };
@@ -42,7 +41,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container-a">
       <h1 className="text-2xl font-bold text-center text-gray-700 mb-6">Tabla de productos</h1>
 
       <div className="overflow-x-auto">

@@ -30,7 +30,7 @@ const Ordenes = () => {
   }
 
   return (
-    <div className="container">
+    <div className="container-a">
       <h1 className="text-2xl font-bold text-center text-gray-700 mb-6">Tabla de ordenes</h1>
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto border-collapse border border-gray-300 shadow-md rounded-lg">

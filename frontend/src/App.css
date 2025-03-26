@@ -1,19 +1,27 @@
-.container {
+.container-a {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%; /* Usa porcentaje en lugar de valores fijos */
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 4rem;
     min-height: 100vh;
     box-sizing: border-box;
+    padding: 1rem;
 }
 
-.footer {
-    text-align: center;
-    width: 100%;
-    height: 20vh;
-    background-color: gray;
-    margin-top: 4rem;
+@media (max-width: 768px) {
+    .container-a {
+        width: 95%; 
+        margin-top: 2rem; 
+        min-height: auto; 
+    }
+}
 
+
+@media (min-width: 1200px) {
+    .container-a {
+        width: 100%;
+        max-width: 1200px; 
+    }
 }

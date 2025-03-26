@@ -57,48 +57,50 @@ const EditProduct = () => {
     }
 
     return (
-        <div className="container"> 
-            <h1 className="text-2xl font-semibold mb-4">Editar Producto</h1>
-            {formData ? (
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-4">
-                        <label htmlFor="nombre" className="block text-sm font-medium text-gray-700">Nombre</label>
-                        <input
-                            type="text"
-                            id="nombre"
-                            name="nombre"
-                            value={formData.nombre || ""}
-                            onChange={handleChange}
-                            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-                            required
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="valor" className="block text-sm font-medium text-gray-700">Valor</label>
-                        <input
-                            type="number"
-                            id="valor"
-                            name="valor"
-                            value={formData.valor || ""}
-                            onChange={handleChange}
-                            className="mt-1 p-2 w-full border border-gray-300 rounded-md"
-                            required
-                        />
-                    </div>
-                    <button type="submit" className="mt-4 w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
-                        Actualizar Producto
-                    </button>
-                    <Link
-                        to="/dashboard"
-                        className="mt-4 w-full block text-center bg-gray-500 text-white p-2 rounded-md hover:bg-gray-600"
-                    >
-                        Volver
-                    </Link>
-                </form>
-            ) : (
-                <div>No se encontró el producto.</div>
-            )}
-        </div>
+        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+            <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
+                <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Editar Producto</h2>
+                {formData ? (
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-4">
+                            <label htmlFor="nombre" className="block text-sm font-medium text-gray-700">Nombre</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                value={formData.nombre || ""}
+                                onChange={handleChange}
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                                required
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="valor" className="block text-sm font-medium text-gray-700">Valor</label>
+                            <input
+                                type="number"
+                                id="valor"
+                                name="valor"
+                                value={formData.valor || ""}
+                                onChange={handleChange}
+                                className="mt-1 p-2 w-full border border-gray-300 rounded-md"
+                                required
+                            />
+                        </div>
+                        <button type="submit" className="mt-4 w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
+                            Actualizar Producto
+                        </button>
+                        <Link
+                            to="/dashboard"
+                            className="mt-4 w-full block text-center bg-gray-500 text-white p-2 rounded-md hover:bg-gray-600"
+                        >
+                            Volver
+                        </Link>
+                    </form>
+                ) : (
+                    <div>No se encontró el producto.</div>
+                )}
+            </div>            </div>
+
     );
 };
 

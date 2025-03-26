@@ -37,7 +37,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-a">
       <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Carrito de Compras</h1>
       {/* Si el carrito está vacío */}
       {carrito.length === 0 ? (
