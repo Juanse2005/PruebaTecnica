@@ -31,6 +31,17 @@ export const getProductosById = async (id: number) => {
   }
 };
 
+export const deleteProductos= async (id: number) => {
+  try {
+    const response = await axiosInstance.delete(`/products/${id}`); 
+    return response.data;
+  } catch (error) {
+    console.error("Error al obtener el producto", error);
+    throw error;
+  }
+};
+
+
 export const putProductos = async (id_producto: number, formData: Producto) => {
   try {
     const response = await axiosInstance.put(`/products/${id_producto}`, formData);

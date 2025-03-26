@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getProductos } from "../services/service";
+import { deleteProductos, getProductos } from "../services/service";
 
 const Dashboard = () => {
   const [productos, setProductos] = useState<any[]>([]);
@@ -22,6 +22,17 @@ const Dashboard = () => {
       });
   }, []);
 
+  const handleDelete = async (id: number) => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+      try {
+        await deleteProductos(id); // Llama al servicio para eliminar el producto
+        setProductos(productos.filter((producto) => producto.id_producto !== id)); // Actualiza la lista de productos
+      } catch (error) {
+        console.error("Error al eliminar el producto:", error);
+        setError("Hubo un error al eliminar el producto. Inténtalo de nuevo.");
+      }
+    }
+  };
   if (isLoading) {
     return <div className="text-center">Cargando productos...</div>;
   }
@@ -64,7 +75,8 @@ const Dashboard = () => {
                     </Link>
                   </td>
                   <td className="py-3 px-6 border-b text-gray-600 text-center">
-                    <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none">
+                    <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none"
+                    onClick={() => handleDelete(producto.id_producto)}>
                       Eliminar
                     </button>
                   </td>

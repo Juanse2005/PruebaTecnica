@@ -27,7 +27,6 @@ function Register() {
             const response = await axios.post(`${baseURL}/auth/register`, usuario);
 
             console.log('Respuesta:', response.data);
-            localStorage.setItem('token', response.data.token);
             window.location.href = "/login";
         } catch (error) {
             console.error("Error al obtener datos de login:", error);

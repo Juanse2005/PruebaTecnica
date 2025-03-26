@@ -47,6 +47,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setUser(null);
     setToken(null);
     localStorage.removeItem("token");
+    localStorage.removeItem("id_rol");
+    window.location.href = "/login";
   };
 
   return (

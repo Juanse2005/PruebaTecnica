@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -7,29 +8,51 @@ function Login() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const baseURL = "http://localhost:3000";
+    const navigate = useNavigate();
 
-    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
         setLoading(true);
         setError('');
-
+    
         try {
-            const response = await axios.post(`${baseURL}/auth/login`, {
-                email,
-                password,
-            });
-
-            console.log('Respuesta:', response.data);
-            localStorage.setItem('token', response.data.data.token);
-            window.location.href = "/dashboard";
-
+            const response = await axios.post(`${baseURL}/auth/login`, { email, password });
+            console.log('Respuesta completa:', response.data);
+    
+            const { token, id_rol } = response.data?.data || {}; // Asegura que `data` existe
+    
+            if (!token || id_rol === undefined) {
+                throw new Error("Respuesta inválida del servidor.");
+            }
+    
+            localStorage.setItem('token', token);
+            localStorage.setItem('id_rol', id_rol.toString());
+    
+            console.log("Redirigiendo según el rol:", id_rol);
+    
+            setTimeout(() => {
+                switch (id_rol) {
+                    case 1:
+                        window.location.href = ('/dashboard');
+                        break;
+                    case 2:
+                        window.location.href = ('/');
+                        break;
+                    default:
+                        setError("Rol no autorizado.");
+                        console.error("Rol desconocido:", id_rol);
+                        break;
+                }
+            }, 500);
+    
         } catch (error) {
-            console.error("Error al obtener datos de login:", error);
+            console.error("Error en el login:", error);
             setError('Correo o contraseña incorrectos.');
         } finally {
             setLoading(false);
         }
     };
+    
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-white">

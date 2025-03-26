@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Producto from "../interfaces/producto";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CreateProduct = () => {
     const [producto, setProducto] = useState<Omit<Producto, "cantidad">>({
@@ -26,13 +27,13 @@ const CreateProduct = () => {
             const response = await axios.post(`${baseURL}/products`, {
                 ...producto,
                 valor: Number(producto.valor),
-             },
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            }
-        );
+            },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
             console.log("Producto creado:", response.data);
             setSuccess(true);
             setProducto({ id_producto: 0, nombre: "", valor: 0 });
@@ -49,7 +50,7 @@ const CreateProduct = () => {
         const { name, value } = e.target;
         setProducto((prevProducto) => ({
             ...prevProducto,
-            [name]: name === "valor" ? value.replace(/\D/g, "") : value, 
+            [name]: name === "valor" ? value.replace(/\D/g, "") : value,
         }));
     };
 
@@ -99,8 +100,16 @@ const CreateProduct = () => {
                             }`}
                         disabled={loading}
                     >
+
                         {loading ? "Cargando..." : "Crear Producto"}
                     </button>
+                    <Link
+                        to="/dashboard"
+                        className="mt-4 w-full block text-center bg-gray-500 text-white p-2 rounded-md hover:bg-gray-600"
+                    >
+                        Volver
+                    </Link>
+
                 </form>
             </div>
         </div>
