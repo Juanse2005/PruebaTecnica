@@ -27,7 +27,6 @@ model usuario {
 model producto {
   id_producto     Int     @id @default(autoincrement())
   nombre  String
-  id_categoria    Int
   valor         Int
 }
 

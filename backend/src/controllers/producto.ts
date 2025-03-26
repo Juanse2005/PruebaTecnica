@@ -30,11 +30,11 @@ export const consultarProducto = async (req: Request, res: Response) => {
 }
 
 export const insertarProducto = async (req: Request, res: Response) => {
-    const { nombre, id_categoria, valor } = req.body;
+    const { nombre, valor } = req.body;
     try {
         const productoInsertado = await prisma.producto.create({
             data: {
-                nombre, id_categoria, valor
+                nombre, valor
             }
         });
         res.json({
@@ -49,12 +49,12 @@ export const insertarProducto = async (req: Request, res: Response) => {
 
 export const actualizarProducto = async (req: Request, res: Response) => {
     const { id } = req.params;
-    const { nombre, id_categoria, valor } = req.body;
+    const { nombre, valor } = req.body;
     try {
         const productoActualizado = await prisma.producto.update({
             where: { id_producto: parseInt(id) },
             data: {
-                nombre, id_categoria, valor
+                nombre, valor
             }
         });
         res.json({

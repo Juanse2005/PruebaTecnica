@@ -18,14 +18,14 @@ export const iniciarJwt = (datoCodificado: object): string => {
     const token = jwt.sign(
         datoCodificado,
         privateKey,
-        { expiresIn: '8h', algorithm: 'HS256' } // Cambiar a HS256
+        { expiresIn: '8h', algorithm: 'HS256' }
     );
     return token;
 }
 
 export const validarJwt = (token: string): object | { mensajeError: string } => {
     try {
-        const privateKey = 'apiVotacion_data';
+        const privateKey = 'apiPrueba_data';
         const decoded = jwt.verify(token, privateKey);
         if (typeof decoded === 'object' && decoded !== null) {
             return decoded;
