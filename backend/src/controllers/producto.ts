@@ -17,10 +17,10 @@ export const consultarProducto = async (req: Request, res: Response) => {
         else {
             let datosConsulta = await prisma.producto.findMany();
 
-            const rol = datosConsulta && Array.isArray(datosConsulta) && datosConsulta.length > 0 ? datosConsulta : null;
+            const producto = Array.isArray(datosConsulta) ? datosConsulta : [];
 
             res.json({
-                data: rol
+                data: producto
             });
         }
     } catch (error: any) {

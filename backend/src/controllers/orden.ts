@@ -19,7 +19,7 @@ export const consultarOrden = async (req: Request, res: Response) => {
         else {
             let datosConsulta = await prisma.orden.findMany();
 
-            const orden = datosConsulta && Array.isArray(datosConsulta) && datosConsulta.length > 0 ? datosConsulta : null;
+            const orden = Array.isArray(datosConsulta) ? datosConsulta : [];
 
             res.json({
                 data: orden
@@ -33,11 +33,11 @@ export const consultarOrden = async (req: Request, res: Response) => {
 
 
 export const insertarOrden = async (req: Request, res: Response) => {
-    const { fecha, total, detalles } = req.body;
+    const { fecha, total, id_usuario, detalles } = req.body;
     try {
         const resultado = await prisma.$transaction(async (prisma) => {
             const ordenInsertada = await prisma.orden.create({
-                data: { fecha, total }
+                data: { fecha, total, id_usuario  }
             });
             const detallesInsertados = await prisma.detalle_orden.createMany({
                 data: detalles.map((detalle: { id_producto: number; cantidad: number; precio: number }) => ({

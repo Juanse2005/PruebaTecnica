@@ -1,11 +1,11 @@
 .container-a {
     display: flex;
     flex-direction: column;
-    width: 90%; /* Usa porcentaje en lugar de valores fijos */
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 4rem;
-    min-height: 100vh;
+    margin-top: 2rem;
+    height: 100vh;
     box-sizing: border-box;
     padding: 1rem;
 }

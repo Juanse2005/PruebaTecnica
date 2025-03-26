@@ -19,13 +19,14 @@ function Login() {
             const response = await axios.post(`${baseURL}/auth/login`, { email, password });
             console.log('Respuesta completa:', response.data);
     
-            const { token, id_rol } = response.data?.data || {}; // Asegura que `data` existe
+            const { token, id_rol, id_usuario } = response.data?.data || {};
     
             if (!token || id_rol === undefined) {
                 throw new Error("Respuesta inválida del servidor.");
             }
     
             localStorage.setItem('token', token);
+            localStorage.setItem('id_usuario', id_usuario);
             localStorage.setItem('id_rol', id_rol.toString());
     
             console.log("Redirigiendo según el rol:", id_rol);

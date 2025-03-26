@@ -3,7 +3,7 @@ import Producto from "../interfaces/producto";
 import DetalleOrden from "../interfaces/detalle-orden";
 
 const token = localStorage.getItem("token");
-
+const id_usuario = Number(localStorage.getItem("id_usuario"));
 const axiosInstance = axios.create({
   baseURL: "http://localhost:3000",
   headers: {
@@ -78,6 +78,7 @@ export const createOrden = async (total: number, detalles: DetalleOrden[]) => {
     fecha,
     total,
     detalles,
+    id_usuario
   };
 
   try {

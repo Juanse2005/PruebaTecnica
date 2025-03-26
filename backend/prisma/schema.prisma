@@ -35,6 +35,8 @@ model orden {
   id_orden   Int     @id @default(autoincrement())
   fecha  DateTime
   total  Decimal  @db.Decimal(10, 2)
+  id_usuario Int
+
 }
 
 model detalle_orden {

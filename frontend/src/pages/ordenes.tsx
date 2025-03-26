@@ -37,8 +37,10 @@ const Ordenes = () => {
           <thead className="bg-gray-200">
             <tr>
               <th className="py-3 px-6 border-b text-left text-gray-700">ID</th>
+              <th className="py-3 px-6 border-b text-left text-gray-700">Usuario</th>
               <th className="py-3 px-6 border-b text-left text-gray-700">Fecha</th>
               <th className="py-3 px-6 border-b text-left text-gray-700">Total</th>
+
               <th className="py-3 px-6 border-b text-left text-gray-700"></th>
             </tr>
           </thead>
@@ -47,6 +49,8 @@ const Ordenes = () => {
               ordenes.map((orden) => (
                 <tr key={orden.id_orden} className="hover:bg-gray-100">
                   <td className="py-3 px-6 border-b text-gray-600">{orden.id_orden}</td>
+                  <td className="py-3 px-6 border-b text-gray-600">{orden.id_usuario}</td>
+
                   <td className="py-3 px-6 border-b text-gray-600">{orden.fecha}</td>
                   <td className="py-3 px-6 border-b text-gray-600">{orden.total}</td>
                   <td className="py-3 px-6 border-b text-gray-600 text-center">
