@@ -24,7 +24,7 @@ export const consultarProducto = async (req: Request, res: Response) => {
             });
         }
     } catch (error: any) {
-        console.error("Error en consultarRol:", error.message);
+        console.error("Error en consultar producto:", error.message);
         res.status(500).json({ error: "Error al obtener los productos" });
     }
 }
@@ -38,12 +38,12 @@ export const insertarProducto = async (req: Request, res: Response) => {
             }
         });
         res.json({
-            message: "Prodcuto creado con éxito",
+            message: "Producto creado con éxito",
             data: productoInsertado
         });
     } catch (error) {
-        console.error("Error al actualizar rol:", error);
-        res.status(500).json({ error: "Error al actualizar el rol" });
+        console.error("Error al insertar producto:", error);
+        res.status(500).json({ error: "Error al insertar el rol" });
     }
 }
 
@@ -58,12 +58,12 @@ export const actualizarProducto = async (req: Request, res: Response) => {
             }
         });
         res.json({
-            message: "Prodcuto actualizado con éxito",
+            message: "Producto actualizado con éxito",
             data: productoActualizado
         });
     } catch (error) {
-        console.error("Error al actualizar rol:", error);
-        res.status(500).json({ error: "Error al actualizar el rol" });
+        console.error("Error al actualizar producto:", error);
+        res.status(500).json({ error: "Error al actualizar el producto" });
     }
 
 }
@@ -75,12 +75,12 @@ export const eliminarProducto = async (req: Request, res: Response) => {
             where: { id_producto: parseInt(id) }
         });
         res.json({
-            message: "Prodcuto eliminado con éxito",
+            message: "Producto eliminado con éxito",
             data: productoEliminado
         });
     } catch (error) {
-        console.error("Error al actualizar rol:", error);
-        res.status(500).json({ error: "Error al actualizar el rol" });
+        console.error("Error al eliminar producto:", error);
+        res.status(500).json({ error: "Error al eliminar el producto" });
     }
 
 }
