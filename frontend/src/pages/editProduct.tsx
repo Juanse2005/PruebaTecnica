@@ -57,7 +57,7 @@ const EditProduct = () => {
     }
 
     return (
-        <div className="max-w-lg mx-auto p-4 border border-gray-300 rounded-lg shadow-md">
+        <div className="container"> 
             <h1 className="text-2xl font-semibold mb-4">Editar Producto</h1>
             {formData ? (
                 <form onSubmit={handleSubmit}>

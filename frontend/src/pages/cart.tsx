@@ -19,13 +19,15 @@ const Cart = () => {
     }
 
     const detalles = carrito.map((producto) => ({
+      id_detalle_orden: 0,
+      id_orden: 0, 
       id_producto: producto.id_producto,
       cantidad: producto.cantidad || 1,
       precio: producto.valor,
     }));
 
     try {
-      const response = await createOrden(total, detalles);
+      const response = await createOrden(total, detalles); 
       alert("Compra realizada con éxito. ID de la orden: " + response.id);
       navigate("/dashboard");
     } catch (error) {

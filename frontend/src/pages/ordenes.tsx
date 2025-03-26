@@ -31,7 +31,7 @@ const Ordenes = () => {
 
   return (
     <div className="container">
-      <h1 className="text-2xl font-semibold mb-6 text-center">Órdenes</h1>
+      <h1 className="text-2xl font-bold text-center text-gray-700 mb-6">Tabla de ordenes</h1>
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto border-collapse border border-gray-300 shadow-md rounded-lg">
           <thead className="bg-gray-200">
@@ -39,7 +39,7 @@ const Ordenes = () => {
               <th className="py-3 px-6 border-b text-left text-gray-700">ID</th>
               <th className="py-3 px-6 border-b text-left text-gray-700">Fecha</th>
               <th className="py-3 px-6 border-b text-left text-gray-700">Total</th>
-                <th className="py-3 px-6 border-b text-left text-gray-700">Ver detalle</th>
+              <th className="py-3 px-6 border-b text-left text-gray-700"></th>
             </tr>
           </thead>
           <tbody className="bg-gray-50">

@@ -27,7 +27,7 @@ function Home() {
 
   return (
     <div className="container">
-      <h1 className="text-2xl mt-6 mb-4 text-center font-semibold text-gray-900">
+      <h1 className="text-2xl font-bold text-center text-gray-700 mb-6">
         Productos
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto">

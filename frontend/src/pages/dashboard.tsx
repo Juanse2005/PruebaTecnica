@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getProductos } from "../services/service"; 
+import { getProductos } from "../services/service";
 
 const Dashboard = () => {
   const [productos, setProductos] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
-  
+
   useEffect(() => {
     setIsLoading(true);
     getProductos()
@@ -32,16 +32,21 @@ const Dashboard = () => {
 
   return (
     <div className="container">
-      <h1 className="text-2xl font-semibold mb-6 text-center">Dashboard</h1>
+      <h1 className="text-2xl font-bold text-center text-gray-700 mb-6">Tabla de productos</h1>
+
       <div className="overflow-x-auto">
+        <Link to={`/create-product`}>
+          <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none mb-4">Agregar nuevo producto</button>
+        </Link>
+
         <table className="min-w-full table-auto border-collapse border border-gray-300 shadow-md rounded-lg">
           <thead className="bg-gray-200">
             <tr>
               <th className="py-3 px-6 border-b text-left text-gray-700">ID</th>
               <th className="py-3 px-6 border-b text-left text-gray-700">Nombre</th>
               <th className="py-3 px-6 border-b text-left text-gray-700">Valor</th>
-              <th className="py-3 px-6 border-b text-left text-gray-700">Editar</th>
-              <th className="py-3 px-6 border-b text-left text-gray-700">Eliminar</th>
+              <th className="py-3 px-6 border-b text-left text-gray-700"></th>
+              <th className="py-3 px-6 border-b text-left text-gray-700"></th>
             </tr>
           </thead>
           <tbody className="bg-gray-50">

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getOrdenById } from "../services/service";
-import DetalleOrden from "../interfaces/detalle-orden"; // Importa la interfaz
+import DetalleOrden from "../interfaces/detalle-orden"; 
 
 const OrdenesDetalle = () => {
-    const { id } = useParams(); // Obtener el ID de la orden desde la URL
-    const [detalles, setDetalles] = useState<DetalleOrden[]>([]); // Estado para almacenar los detalles de la orden
-    const [isLoading, setIsLoading] = useState<boolean>(false); // Estado de carga
-    const [error, setError] = useState<string>(""); // Estado para manejar errores
+    const { id } = useParams(); 
+    const [detalles, setDetalles] = useState<DetalleOrden[]>([]); 
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string>(""); 
 
     useEffect(() => {
         if (id) {
@@ -15,7 +15,7 @@ const OrdenesDetalle = () => {
             getOrdenById(parseInt(id))
                 .then((response) => {
                     if (response.data && Array.isArray(response.data)) {
-                        setDetalles(response.data); // Almacenar solo los detalles de la orden
+                        setDetalles(response.data);
                     } else {
                         setError("No se encontraron detalles para esta orden.");
                     }
@@ -38,7 +38,7 @@ const OrdenesDetalle = () => {
     }
 
     if (detalles.length === 0) {
-        return <div className="container"> <div className="text-center">No se encontraron detalles para esta orden.</div>;</div>
+        return <div className="container"> <div className="text-2xl font-bold text-center text-gray-700 mb-6">No se encontraron detalles para esta orden.</div></div>
     }
 
     return (
