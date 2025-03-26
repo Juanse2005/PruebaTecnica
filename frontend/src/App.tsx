@@ -9,7 +9,9 @@ import Register from './pages/register';
 import ProtectedRoute from './services/protected-route';
 import EditProduct from './pages/editProduct';
 import Cart from './pages/cart';
+import footer from './components/footer';
 import { CartProvider } from './context/CartContext';
+import Footer from './components/footer';
 
 function App() {
 
@@ -18,21 +20,21 @@ function App() {
 
       <Router>
         <Nav />
-        <div className="container mx-auto p-4 w-100">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/cart" element={<Cart />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
 
-            <Route element={<ProtectedRoute />}>
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/ordenes" element={<Ordenes />} />
-              <Route path="/edit-product/:id" element={<EditProduct />} />
-            </Route>
-          </Routes>
-        </div>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/ordenes" element={<Ordenes />} />
+            <Route path="/edit-product/:id" element={<EditProduct />} />
+          </Route>
+        </Routes>
       </Router>
+      <Footer />
+
     </CartProvider>
 
   )

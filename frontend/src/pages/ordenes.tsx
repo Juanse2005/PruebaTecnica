@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getOrden } from "../services/service"; 
+import { getOrden } from "../services/service";
 
 const Ordenes = () => {
   const [ordenes, setOrdenes] = useState<any[]>([]);
@@ -30,9 +30,7 @@ const Ordenes = () => {
   }
 
   return (
-    <>
-      <div className="container mx-auto p-4 w-full">
-
+    <div className="container">
         <h1 className="text-2xl font-semibold mb-6 text-center">Órdenes</h1>
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto border-collapse border border-gray-300 shadow-md rounded-lg">
@@ -71,9 +69,7 @@ const Ordenes = () => {
           </table>
         </div>
       </div>
-
-    </>
-  )
+  );
 };
 
 export default Ordenes;

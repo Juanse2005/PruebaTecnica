@@ -30,7 +30,7 @@ const Dashboard = () => {
   }
 
   return (
-    <>
+    <div className="container">
       <h1 className="text-2xl font-semibold mb-6 text-center">Dashboard</h1>
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto border-collapse border border-gray-300 shadow-md rounded-lg">
@@ -74,7 +74,7 @@ const Dashboard = () => {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 };
 

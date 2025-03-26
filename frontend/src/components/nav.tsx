@@ -4,7 +4,7 @@ function Nav() {
 
   return (
     <nav className="bg-blue-600 p-4 w-full">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className=" mx-auto flex justify-between items-center">
         <h1 className="text-white text-2xl">Mi App</h1>
         <div className="space-x-4">
           <Link to="/" className="text-white hover:text-gray-300">Home</Link>

@@ -25,7 +25,7 @@ const Cart = () => {
     }));
 
     try {
-      const response = await createOrden(total, detalles); 
+      const response = await createOrden(total, detalles);
       alert("Compra realizada con éxito. ID de la orden: " + response.id);
       navigate("/dashboard");
     } catch (error) {
@@ -35,18 +35,12 @@ const Cart = () => {
   };
 
   return (
-    <div className="container mx-auto p-8 bg-white rounded-lg shadow-lg">
+    <div className="container">
       <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Carrito de Compras</h1>
-
       {/* Si el carrito está vacío */}
       {carrito.length === 0 ? (
         <div className="text-center">
           <p className="text-xl text-gray-600">No hay productos en el carrito.</p>
-          <img
-            src="/images/empty-cart.svg"
-            alt="Carrito vacío"
-            className="mx-auto mt-6 w-64"
-          />
         </div>
       ) : (
         <div className="overflow-x-auto">

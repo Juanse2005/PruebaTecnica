@@ -6,7 +6,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const baseURL = "http://localhost:3000"; 
+    const baseURL = "http://localhost:3000";
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
