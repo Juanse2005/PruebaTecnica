@@ -1,0 +1,26 @@
+
+---Registro iniciado -> 2025-03-26T22:54:59.961Z
+
+                
+ ###### INICIO ###### 
+
+                
+ ###### Peticion ###### 
+
+                
+ login: => {
+  "email": "juanse@gmail.com",
+  "password": "123456"
+}
+ ***RESPUESTA***** 
+
+                
+ {
+  "id_usuario": 2,
+  "primer_nombre": "Juanse",
+  "primer_apellido": "Niño",
+  "email": "juanse@gmail.com",
+  "id_rol": 2,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjoyLCJlbWFpbCI6Imp1YW5zZUBnbWFpbC5jb20iLCJpZF9yb2wiOjIsImlhdCI6MTc0MzAyOTY5OSwiZXhwIjoxNzQzMDU4NDk5fQ.th3Yia63P1K1LGKgZncSrg5PYUVfgTZR1dXmjGlOTwg"
+}
+                

@@ -1,0 +1,23 @@
+
+---Registro iniciado -> 2025-03-26T22:55:12.837Z
+
+                
+ ###### INICIO ###### 
+
+                
+ ###### Peticion ###### 
+
+                
+ consultarOrden: => {}
+ ***RESPUESTA***** 
+
+                
+ [
+  {
+    "id_orden": 8,
+    "fecha": "2025-03-26T00:00:00.000Z",
+    "total": "450000",
+    "id_usuario": 2
+  }
+]
+                
