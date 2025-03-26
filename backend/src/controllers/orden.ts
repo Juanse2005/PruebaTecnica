@@ -7,7 +7,7 @@ export const consultarOrden = async (req: Request, res: Response) => {
     const { id } = req.params;
     try {
         if (id) {
-            let datosConsulta = await prisma.orden.findUnique({
+            let datosConsulta = await prisma.detalle_orden.findMany({
                 where: {
                     id_orden: parseInt(id)
                 }

@@ -1,6 +1,7 @@
 export default interface DetalleOrden {
-    id_producto: number;
-    cantidad: number;
-    precio: number;
-  }
-  
+  id_detalle_orden: number;
+  id_orden: number;
+  id_producto: number;
+  cantidad: number;
+  precio: number;
+}

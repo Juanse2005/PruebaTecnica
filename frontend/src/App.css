@@ -1,17 +1,12 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 100%;
     max-width: 1200px;
-    /* Limita el ancho máximo para un diseño más limpio */
     margin: 0 auto;
-    /* Centra horizontalmente el contenedor */
-    padding: 1rem;
-    /* Agrega espacio interno */
+    margin-top: 4rem;
     min-height: 100vh;
     box-sizing: border-box;
-    /* Asegura que el padding no afecte el ancho total */
 }
 
 .footer {

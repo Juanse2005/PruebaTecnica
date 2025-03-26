@@ -9,9 +9,11 @@ import Register from './pages/register';
 import ProtectedRoute from './services/protected-route';
 import EditProduct from './pages/editProduct';
 import Cart from './pages/cart';
+import Layout from './components/layout';
 import footer from './components/footer';
 import { CartProvider } from './context/CartContext';
 import Footer from './components/footer';
+import OrdenesDetalle from './pages/ordenes_detalle';
 
 function App() {
 
@@ -21,6 +23,7 @@ function App() {
       <Router>
         <Nav />
         <Routes>
+          
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -30,6 +33,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/ordenes" element={<Ordenes />} />
             <Route path="/edit-product/:id" element={<EditProduct />} />
+            <Route path="/ordenes_detalle/:id" element={<OrdenesDetalle />} />
           </Route>
         </Routes>
       </Router>

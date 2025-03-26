@@ -7,6 +7,7 @@ const Dashboard = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
+  
   useEffect(() => {
     setIsLoading(true);
     getProductos()

@@ -51,6 +51,16 @@ export const getOrden = async () => {
   }
 };
 
+export const getOrdenById = async (id: number) => {
+  try {
+    const response = await axiosInstance.get(`/orders/${id}`); 
+    return response.data;
+  } catch (error) {
+    console.error("Error al obtener el producto", error);
+    throw error;
+  }
+};
+
 export const createOrden = async (total: number, detalles: DetalleOrden[]) => {
   const fecha = new Date().toISOString(); 
   const orden = {
